@@ -6,6 +6,10 @@ const sessionTimeout = require('./middleware/session.middleware');
 const csurf = require('csurf');
 
 const app = express();
+const adminRoutes = require('./routes/admin.routes');
+
+app.use('/api/admin', adminRoutes);
+
 
 app.use(helmet());
 app.use(express.json());
